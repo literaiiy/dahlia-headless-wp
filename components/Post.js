@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { getAuthor, getFeaturedImage } from '../lib/utils';
 import parse from 'html-react-parser';
+import styles from '../styles/Post.module.scss'
+import { formatPostDate } from '../lib/utils';
 
 export default function Post({ post }) {
 
@@ -24,17 +26,23 @@ export default function Post({ post }) {
   }, []);
 
   return (
-    <div>
-      <img className="excerpt-img mb-5" src={postImgAndAuthor ? postImgAndAuthor.featImgUrl : '/aeeiee-logo.png'} />
-
-      <Link href={`/post/${post.id}`}><a className="text-4xl font-bold">{post.title.rendered}</a></Link>
-      <h4>{new Date(post.date).toDateString()}</h4>
-      <div className="mt-2 relative">
-        <div className="mb-2 max-w-lg">{parse(post.excerpt.rendered)}</div>
-        <Link href={`/post/${post.id}`}>
-          <a className="mt-3 text-blue-800 bottom-0">Continue reading</a>
-        </Link>
-      </div>
-    </div>
+    <>
+      <section className={styles.post}>
+        <div>
+          <img className={styles.post_thumb} src={postImgAndAuthor ? postImgAndAuthor.featImgUrl : '/aeeiee-logo.png'} />
+        </div>
+        <div>
+          <Link href={`/post/${post.id}`}><a className=""><h2>{post.title.rendered}</h2></a></Link>
+          <div>{formatPostDate(new Date(post.date))}</div>
+          <div>{new Date(post.date).toLocaleTimeString()}</div>
+          <div className="">{parse(post.excerpt.rendered)[0]}</div>
+          <Link href={`/post/${post.id}`}>
+            <a className="">Read more</a>
+          </Link>
+        </div>
+      </section>
+      <hr />
+    </>
   );
 }
+

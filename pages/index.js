@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import { useState, useEffect } from 'react';
 import { getAllPostsFromServer } from '../lib/utils';
 import Post from '../components/Post';
@@ -18,26 +18,26 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.page}>
       <Head>
         <title>dah.li/a test</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1>dah.li/a</h1>
-        <h2>Please work</h2>
-        {posts && (
-          <div>
-            {posts.map((post, id) => {
-              return (
-                <div key={id}>
+        <img src="../images/dahlia-nextjs-smaller.webp" alt="dah.li/a" />
+        <h3>literaiiy's blog built with Next.js and WordPress</h3>
+        <div className={styles.post_scroller}>
+          {posts && (
+            <div key={posts.id}>
+              {posts.map((post, id) => {
+                return (
                   <Post post={post} />
-                </div>
-              );
-            })}
-          </div>
-        )}
+                );
+              })}
+            </div>
+          )}
+        </div>
       </main>
 
       <footer className={styles.footer}>
