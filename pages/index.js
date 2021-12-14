@@ -3,7 +3,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { useState, useEffect } from 'react';
 import { getAllPostsFromServer } from '../lib/utils';
+import { COOL_POSTS } from '../lib/constants';
 import Post from '../components/Post';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Home() {
 
@@ -12,46 +15,30 @@ export default function Home() {
     let mounted = true;
     if (mounted) {
       const postsFromServer = await getAllPostsFromServer();
-      setPosts(postsFromServer);
+      setPosts(postsFromServer.data.posts.edges);
     }
     return () => (mounted = false);
   }, []);
+  console.log(posts)
 
   return (
     <div className={styles.page}>
-      <Head>
-        <title>dah.li/a test</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
-        <img src="../images/dahlia-nextjs-smaller.webp" alt="dah.li/a" />
-        <h3>literaiiy's blog built with Next.js and WordPress</h3>
-        <div className={styles.post_scroller}>
+        <Header />
           {posts && (
-            <div key={posts.id}>
+            <div className={styles.posts_scroller}>
               {posts.map((post, id) => {
                 return (
-                  <Post post={post} />
+                  <>
+                    <hr />
+                    <Post key={posts.id} post={post} cool={COOL_POSTS.includes(post.node.slug)}/>
+                  </>
                 );
               })}
             </div>
           )}
-        </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
