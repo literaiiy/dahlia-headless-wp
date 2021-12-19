@@ -5,7 +5,7 @@
 
 .post {
   display: flex;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   gap: 2rem;
 }
 
@@ -17,7 +17,7 @@
 
 // 
 
-.stfu {
+.cool_post_text {
   background-size: cover;
   background-position: center;
   padding: 6rem 2rem;
@@ -30,7 +30,7 @@
 
 .cool_post {
   display: flex;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   flex-direction: column;
   & > img {
     width: 100%;

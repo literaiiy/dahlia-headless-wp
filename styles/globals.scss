@@ -1,13 +1,16 @@
+$textColor: #353535;
+$lighterTextColor: #777;
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Outfit", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: #353535
+  color: $textColor;
 }
 
-p {
+p, li {
   font-weight: 300;
 }
 
@@ -22,7 +25,50 @@ a {
 
 hr {
   border: 0.25rem solid #eaeaea;
-  margin: 0 1rem;
+  width: min(95vw, 75rem);
+}
+
+#single_post_main {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  & h2 { font-size: 2.5rem; }
+  & h3 { font-size: 2rem; }
+  & h4 { font-size: 1.75rem; }
+  & h5 { font-size: 1.5rem; }
+  & a {
+    text-decoration: underline;
+    color: $lighterTextColor;
+  }
+  & img {
+    margin: auto;
+  }
+  & figcaption {
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  & blockquote {
+    border-left: 0.5rem solid #eaeaea;
+    margin: 0;
+    padding: 0.5rem 1.5rem;
+  }
+  & figure {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    & > img {
+      max-width: 100%;
+      height: auto;
+      padding: 1rem;
+      margin: auto;
+    }
+  }
+}
+
+.single_post {
+  max-width: min(95vw, 75rem);
+  flex-direction: column;
 }
 
 .styled_a {

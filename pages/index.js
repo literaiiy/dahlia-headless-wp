@@ -23,20 +23,20 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      <Header />
       <main className={styles.main}>
-        <Header />
-          {posts && (
-            <div className={styles.posts_scroller}>
-              {posts.map((post, id) => {
-                return (
-                  <>
-                    <hr />
-                    <Post key={posts.id} post={post} cool={COOL_POSTS.includes(post.node.slug)}/>
-                  </>
-                );
-              })}
-            </div>
-          )}
+        {posts && (
+          <div className={styles.posts_scroller}>
+            {posts.map((post, id) => {
+              return (
+                <>
+                  <Post key={posts.id} post={post} cool={COOL_POSTS.includes(post.node.slug)}/>
+                  <hr />
+                </>
+              );
+            })}
+          </div>
+        )}
       </main>
       <Footer />
     </div>
