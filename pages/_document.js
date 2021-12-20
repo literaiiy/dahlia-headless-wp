@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Footer from '../components/Footer'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,16 +11,16 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>dah.li/a test</title>
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
+        <Footer />
       </Html>
     )
   }

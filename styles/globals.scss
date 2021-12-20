@@ -1,5 +1,6 @@
 $textColor: #353535;
 $lighterTextColor: #777;
+$lightBg: #f3f3f3;
 
 html,
 body {
@@ -24,9 +25,24 @@ a {
 }
 
 hr {
-  border: 0.25rem solid #eaeaea;
-  width: min(95vw, 75rem);
+  border-top: 0.25rem solid #eaeaea;
+  border-bottom: 0.25rem solid #eaeaea;
+  border-left: none;
+  border-right: none;
+  width: 100%;
 }
+
+.page {
+  min-height: 100vh;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: min(95vw, 75rem);
+}
+
 
 #single_post_main {
   padding: 4rem 0;
@@ -60,14 +76,12 @@ hr {
     & > img {
       max-width: 100%;
       height: auto;
-      padding: 1rem;
-      margin: auto;
+      margin: 1rem auto;
     }
   }
 }
 
 .single_post {
-  max-width: min(95vw, 75rem);
   flex-direction: column;
 }
 
@@ -84,4 +98,13 @@ hr {
   width: auto;
   background-color: gray;
   font-weight: 700;
+}
+
+code {
+  font-family: "IBM Plex Mono";
+  background-color: $lightBg;
+  color: $lighterTextColor;
+  border-radius: 0.25rem;
+  line-height: 1.15rem;
+  font-size: 0.875rem;
 }

@@ -5,11 +5,12 @@ import Header from "../../components/Header";
 import { formatPostDate, getSpecificPost } from "../../lib/utils";
 import { POSTS_API_URL } from "../../lib/constants";
 import styles from '../../styles/SinglePost.module.scss';
-
+import Layout from "../../components/Layout";
 export default class SinglePost extends React.Component {
   render() {
     return (
-      <>
+      <div className="page">
+        <Layout title={this.props.title} desc={this.props.excerpt} image={this.props.image}/>
         <Header />
         <main id='single_post_main'>
           <section className='single_post'>
@@ -24,16 +25,14 @@ export default class SinglePost extends React.Component {
             {parse(this.props.content)}
           </section>
         </main>
-      </>
+      </div>
     )
   }
 }
 
 export async function getStaticPaths() {
   const response = await axios.get(POSTS_API_URL)
-  // console.log(response)
   const posts = response.data.data.posts.edges
-  console.log(posts[0].node.slug)
 
   const paths = posts.map((thisPost) => ({
     params: { post: thisPost.node.slug || "invalid" },
@@ -43,13 +42,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await getSpecificPost(params.post);
-  console.log(res.data.post)
   return {
     props:{ content: res.data.post.content,
             title: res.data.post.title,
             date: res.data.post.date,
             image: res.data.post.featuredImage.node.sourceUrl,
-            category: res.data.post.categories.edges[0].node.name
+            category: res.data.post.categories.edges[0].node.name,
+            excerpt: res.data.post.excerpt
           },
   };
 }
