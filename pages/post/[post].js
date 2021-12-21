@@ -43,12 +43,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const res = await getSpecificPost(params.post);
   return {
-    props:{ content: res.data.post.content,
-            title: res.data.post.title,
-            date: res.data.post.date,
-            image: res.data.post.featuredImage.node.sourceUrl,
-            category: res.data.post.categories.edges[0].node.name,
-            excerpt: res.data.post.excerpt
-          },
+    props: {
+      content: res.data.post.content,
+      title: res.data.post.title,
+      date: res.data.post.date,
+      image: res.data.post.featuredImage.node.sourceUrl,
+      category: res.data.post.categories.edges[0].node.name,
+      excerpt: res.data.post.excerpt
+    },
   };
 }

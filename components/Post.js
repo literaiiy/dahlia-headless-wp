@@ -5,26 +5,7 @@ import parse from 'html-react-parser';
 import styles from '../styles/Post.module.scss'
 import { formatPostDate, formatPostTime } from '../lib/utils';
 
-const Post = ({ post, cool }) => {
-
-  // const [postImgAndAuthor, setPostImgAndAuthor] = useState({ featImgUrl: '', author: '' });
-  // useEffect(() => {
-  //   let mounted = true;
-  //   if (mounted) {
-  //     const featuredImg = getFeaturedImage(post.featured_media);
-  //     Promise.all([featuredImg]).then((res) => {
-  //       setPostImgAndAuthor({
-  //         featImgUrl: res[1],
-  //       });
-  //     });
-  //   }
-  //   return () => {
-  //     mounted = false;
-  //   };
-  // }, []);
-
-  console.log(cool)
-  
+const Post = ({ post, cool }) => {  
   if (!cool) {
     return (
       <>
