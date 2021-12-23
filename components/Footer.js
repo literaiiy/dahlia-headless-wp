@@ -1,9 +1,7 @@
-import styles from '../styles/Footer.module.scss'
-
 export default function Footer() {
   return (
     <>
-      <footer className={styles.footer}>
+      <footer>
         <span>
           Copyright © {new Date().getFullYear()} <a className="styled_a" href="https://literaiiy.me">literaiiy</a>. All rights reserved.
           Built with <a className="styled_a" href="https://nextjs.org">Next.js</a>{" "}

@@ -4,11 +4,17 @@ $lightBg: #f3f3f3;
 
 html,
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 0;
   margin: 0;
   font-family: "Outfit", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: $textColor;
+  & > #__next {
+    flex: 1;
+  } 
 }
 
 p, li {
@@ -25,15 +31,22 @@ a {
 }
 
 hr {
-  border-top: 0.25rem solid #eaeaea;
-  border-bottom: 0.25rem solid #eaeaea;
-  border-left: none;
-  border-right: none;
+  border: 0.25rem solid #eaeaea;
   width: 100%;
 }
 
+footer {
+
+  bottom: 0;
+  width: 100%;
+  height: 6em;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .page {
-  min-height: 100vh;
   padding: 0;
   margin: auto;
   display: flex;
