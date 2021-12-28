@@ -1,6 +1,5 @@
 import React from "react";
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
 import styles from '../styles/Post.module.scss'
 import { formatPostDate, formatPostTime } from '../lib/utils';

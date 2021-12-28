@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import PostsScroller from '../components/PostsScroller';
 
-export default function Home() {
+export default function Home({allPosts: { edges }, preview }) {
 
   const [posts, setPosts] = useState([]);
   useEffect(async () => {
@@ -27,4 +27,12 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export async function getStaticProps({ preview = false }) {
+  const j = await getAllPostsFromServer();
+  const allPosts = j.data.posts.edges;
+  return {
+    props: { allPosts, preview }
+  }
 }
