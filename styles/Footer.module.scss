@@ -1,0 +1,31 @@
+.footer {
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-between;
+}
+
+.copyright {
+  max-width: min(95vw, 16rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.categories {
+  & ul, li {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    & > a {
+      text-decoration: underline;
+    }
+  }
+}
