@@ -15,7 +15,7 @@ export default function Footer(props) {
           <span>Powered by <a className="styled_a" href="https://vercel.com">Vercel</a>.</span>
         </div>
         <div className={styles.categories}>
-          <b>Categories</b>
+          <b className={styles.cat_title}>Categories</b>
           <ul>
             {props.categories.map(edge => {
               return (
