@@ -10,7 +10,7 @@ const Post = ({ post, cool }) => {
       <>
         <section className={styles.post}>
           <div>
-            <a href={`/post/${post.node.slug}`}><img className={styles.post_thumb} src={post.node.featuredImage.node.sourceUrl || '/jacket.png'} /></a>
+            <Link href={`/post/${post.node.slug}`}><img className={styles.post_thumb} src={post.node.featuredImage.node.sourceUrl || '/jacket.png'} /></Link>
           </div>
           <div>
             {/* Title */} <Link href={`/post/${post.node.slug}`}><a className=""><h2 className={styles.post_title}>{post.node.title}</h2></a></Link>
