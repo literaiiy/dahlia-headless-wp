@@ -1,5 +1,16 @@
+@media (max-width: 1024px) {
+  .single_post_title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .single_post_title {
+    font-size: 5rem;
+  }
+}
+
 .single_post_title {
-  font-size: 5rem;
   margin: 2rem 0 1rem 0;
 }
 

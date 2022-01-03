@@ -14,8 +14,8 @@ export default function Footer(props) {
           <span>Served with <a className="styled_a" href="https://wordpress.org">WordPress</a>.</span>
           <span>Powered by <a className="styled_a" href="https://vercel.com">Vercel</a>.</span>
         </div>
+        <br />
         <div className={styles.categories}>
-          <b className={styles.cat_title}>Categories</b>
           <ul>
             {props.categories.map(edge => {
               return (
