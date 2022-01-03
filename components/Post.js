@@ -9,10 +9,10 @@ const Post = ({ post, cool }) => {
     return (
       <>
         <section className={styles.post}>
-          <div>
+          <div className={styles.post_image}>
             <Link href={`/post/${post.node.slug}`}><img className={styles.post_thumb} src={post.node.featuredImage.node.sourceUrl || '/jacket.png'} /></Link>
           </div>
-          <div>
+          <div className={styles.post_meta}>
             {/* Title */} <Link href={`/post/${post.node.slug}`}><a className=""><h2 className={styles.post_title}>{post.node.title}</h2></a></Link>
             {/* Category */} <div ><span className="boxed">{post.node.categories.edges[0].node.name}</span></div>
             {/* Date */} <div>{formatPostDate(new Date(post.node.date))}</div>

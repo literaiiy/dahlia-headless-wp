@@ -27,8 +27,6 @@ MyApp.getInitialProps = async() => {
   const cp = await getSimpleCategories();
   const cp2 = cp.data.categories.edges;
   categoriesCache = cp2;
-  console.log("chuther")
-  console.log(cp2)
   return { categoriesProps: cp2 }
 }
 

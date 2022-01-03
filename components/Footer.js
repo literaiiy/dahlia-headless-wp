@@ -20,7 +20,7 @@ export default function Footer(props) {
             {props.categories.map(edge => {
               return (
                 <li>
-                  <Link href={`/category/${edge.node.slug}`}>{edge.node.name}</Link>
+                  <Link key={edge.node.slug} href={`/category/${edge.node.slug}`}>{edge.node.name}</Link>
                 </li>
               )
             })}

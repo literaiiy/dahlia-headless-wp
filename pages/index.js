@@ -8,16 +8,6 @@ import PostsScroller from '../components/PostsScroller';
 
 export default function Home(props) {
 
-  // const [posts, setPosts] = useState([]);
-  // useEffect(async () => {
-  //   let mounted = true;
-  //   if (mounted) {
-  //     const postsFromServer = await getAllPostsFromServer();
-  //     setPosts(postsFromServer.data.posts.edges);
-  //   }
-  //   return() => (mounted = false);
-  // }, []);
-
   return (
     <div className="page">
       <Header />
