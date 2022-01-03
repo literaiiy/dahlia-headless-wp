@@ -1,6 +1,27 @@
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1rem;
+  }
+  .categories {
+    & > ul {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 2rem;
+  }
+  .categories {
+    & > ul {
+      flex-wrap: wrap;
+    }
+  }
+}
+
 .footer {
   bottom: 0;
-  padding: 2rem;
   width: 100%;
   min-height: 10rem;
   background-color: #f8f8f8;
@@ -29,7 +50,6 @@
     list-style-position: inside;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
     height: 5rem;
     align-content: flex-end;
     gap: 0 1rem;
