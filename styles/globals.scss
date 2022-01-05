@@ -145,6 +145,9 @@ header {
       margin: 1rem auto;
     }
   }
+  & code {
+    white-space: normal;
+  }
 }
 
 .single_post {

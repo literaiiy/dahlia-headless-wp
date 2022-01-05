@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import MiniDahlia from './MiniDahlia'
 
 export default function Footer() {
   return (
     <>
       <footer>
-        <img className="footer_logo" src="../a/images/mini-dahlia.svg" alt="mini dahlia logo"/>
+        <MiniDahlia />
         <div className={"copyright"}>
           Copyright © {new Date().getFullYear()} <a className="styled_a" href="https://literaiiy.me">literaiiy</a>.{" "}
           All rights reserved.{" "}
