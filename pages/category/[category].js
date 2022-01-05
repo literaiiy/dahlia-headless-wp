@@ -3,16 +3,14 @@ import axios from "axios";
 import { CATEGORIES_API_URL } from "../../lib/constants";
 import { getSpecificCategory } from "../../lib/utils";
 import Layout from "../../components/Layout";
-import Header from "../../components/Header";
 import PostsScroller from "../../components/PostsScroller"
 import styles from '../../styles/Category.module.scss'
 
 export default class Category extends React.Component {
   render() {
     return (
-      <div className="page">
+      <>
         <Layout title={this.props.name} desc={this.props.description} />
-        <Header />
         <main className={styles.main}>
           <div className={styles.category_header}>
             <h1>{this.props.name}</h1>
@@ -21,7 +19,7 @@ export default class Category extends React.Component {
           <hr/>
           <PostsScroller posts={this.props.posts.edges}/>
         </main>
-      </div>
+      </>
     )
   }
 }

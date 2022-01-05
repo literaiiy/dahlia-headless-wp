@@ -10,7 +10,7 @@ export default function PostsScroller(props) {
           {props.posts.map((post) => {
             return (
               <>
-                <Post key={props.posts.slug} post={post} cool={COOL_POSTS.includes(post.node.slug)}/>
+                <Post post={post} cool={COOL_POSTS.includes(post.node.slug)}/>
                 <hr />
               </>
             );

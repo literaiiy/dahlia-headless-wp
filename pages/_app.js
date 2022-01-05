@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import '../styles/globals.scss'
 import '../styles/normalize.min.css'
-import Footer from '../components/Footer';
+import CategoriesBar from '../components/CategoriesBar';
 import { getSimpleCategories } from '../lib/utils';
 
 let categoriesCache
@@ -12,9 +12,9 @@ function MyApp({ Component, pageProps, categoriesProps }) {
   }, [])
 
   return (
-    <> 
+    <>
       <Component {...pageProps} />
-      <Footer categories={categoriesProps}/>
+      <CategoriesBar categories={categoriesProps}/>
     </>
   )
 }

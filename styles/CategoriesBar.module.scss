@@ -1,0 +1,29 @@
+.categories {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  background-color: #f8f8f8;
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  width: 100%;
+  justify-content: center;
+  & > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    gap: 0 1rem;
+  }
+  & li {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    & > a {
+      text-decoration: underline;
+    }
+  }
+}

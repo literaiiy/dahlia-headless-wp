@@ -1,7 +1,6 @@
 import axios from "axios";
 import React from "react";
 import parse from "html-react-parser";
-import Header from "../../components/Header";
 import { formatPostDate, getSpecificPost } from "../../lib/utils";
 import { POSTS_API_URL } from "../../lib/constants";
 import styles from '../../styles/SinglePost.module.scss';
@@ -9,9 +8,8 @@ import Layout from "../../components/Layout";
 export default class SinglePost extends React.Component {
   render() {
     return (
-      <div className="page">
+      <>
         <Layout title={this.props.title} desc={this.props.excerpt} image={this.props.image}/>
-        <Header />
         <main id='single_post_main'>
           <section className='single_post'>
             <div>
@@ -25,7 +23,7 @@ export default class SinglePost extends React.Component {
             {parse(this.props.content)}
           </section>
         </main>
-      </div>
+      </>
     )
   }
 }

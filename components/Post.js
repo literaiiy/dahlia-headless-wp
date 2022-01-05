@@ -10,7 +10,7 @@ const Post = ({ post, cool }) => {
       <>
         <section className={styles.post}>
           <div className={styles.post_image}>
-            <Link href={`/post/${post.node.slug}`}><img className={styles.post_thumb} src={post.node.featuredImage.node.sourceUrl || '/jacket.png'} /></Link>
+            <Link href={`/post/${post.node.slug}`}><img className={styles.post_thumb} src={post.node.featuredImage.node.sourceUrl || '/jacket.png' } alt={post.node.slug} /></Link>
           </div>
           <div className={styles.post_meta}>
             {/* Title */} <Link href={`/post/${post.node.slug}`}><a className=""><h2 className={styles.post_title}>{post.node.title}</h2></a></Link>
@@ -18,7 +18,7 @@ const Post = ({ post, cool }) => {
             {/* Date */} <div>{formatPostDate(new Date(post.node.date))}</div>
             {/* Time */} <div>{new Date(post.node.date).toLocaleTimeString()}</div>
             {/* Excerpt */} <div className="">{parse(post.node.excerpt)[0]}</div> 
-            {/* Read more */} <Link href={`/post/${post.node.slug}`}><a className="styled_a">Read more</a></Link>
+            {/* Read more */} <Link href={`/post/${post.node.slug}`}><a className="styled_a" aria-label={post.node.title}>Read more</a></Link>
           </div>
         </section>
       </>
