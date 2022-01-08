@@ -9,7 +9,7 @@ export default class SinglePost extends React.Component {
   render() {
     return (
       <>
-        <Layout title={this.props.title} desc={parse(this.props.excerpt)} image={this.props.image}/>
+        <Layout title={this.props.title} desc={parse(this.props.excerpt)[0].props.children || this.props.title} image={this.props.image}/>
         <main id='single_post_main'>
           <section className='single_post'>
             <div>
