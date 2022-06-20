@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   const paths = posts.map((thisPost) => ({
     params: { post: thisPost.node.slug || "invalid" },
   }));
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export async function getStaticProps({ params }) {
