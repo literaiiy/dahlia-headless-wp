@@ -1,3 +1,3 @@
 # dah.li/a 
 
-Built with Next.js on Vercel and a WordPress backend.
+Personal blog with Next.js frontend on Vercel and a WordPress backend.
