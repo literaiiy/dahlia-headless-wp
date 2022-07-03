@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dah.li/a
+
+# Sitemaps
+Sitemap: https://dah.li/a/sitemap.xml
