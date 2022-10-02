@@ -8,7 +8,7 @@ export default function Footer() {
       <footer>
         <MiniDahlia />
         <div className={"copyright"}>
-          Copyright © {new Date().getFullYear()} <a className="styled_a" href="https://literaiiy.me">literaiiy</a>.{" "}
+          Copyright © {new Date().getFullYear()} <a className="styled_a" href="https://ethany.im">Ethan Yim</a>.{" "}
           All rights reserved.{" "}
           Built with <a className="styled_a" href="https://nextjs.org">Next.js</a>.{" "}
           Served with <a className="styled_a" href="https://wordpress.org">WordPress</a>.{" "}
