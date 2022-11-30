@@ -12,7 +12,7 @@ export default function Home(props) {
       <main className={styles.main}>
         <h2>Welcome!</h2>
         <p>
-          Welcome to literaiiy's personal blog, dah.li/a or dahlia. 
+          Welcome to Ethan's personal blog, dah.li/a or dahlia. 
           Here, I'll talk about a wide variety of topics that I'm passionate about, 
           including (but not limited to) useful software I find, smartphones, cool 
           products and gadgets, and whatever I want to discuss at any given moment.
